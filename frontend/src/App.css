@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.loginpage {
+  width: 100%;
+  height: 100%;
+}
+
+.elipse1 {
+  border-radius: 0% 100% 100% 0% / 30% 0% 100% 70%;
+  background: #B2DFFF;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.elipse2 {
+  position: absolute;
+  border-radius: 100% 0% 100% 0% / 100% 100% 0% 0%;
+  background: #B2DFFF;
+  width: 300px;
+  height: 300px;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
+.logincard {
+  position: absolute;
+  background-color: rgba(206, 243, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  left: 160px;
+  top: 80px;
+  width: 1200px;
+  height: 600px;
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.logo {
+  height: 30%;
+  margin-bottom: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo>h1 {
+  color: #2264AB;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  opacity: 0.75;
+}
+
+.logo>p {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  opacity: 0.6;
+  letter-spacing: 0.25px;
+}
+
+.inputs-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input>input{
+  width: 350px;
+  height: 34px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn{
+  margin-top: 10px;
+}
+.bn632-hover {
+  width: 370px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 5px;
+
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:hover {
+  background-position: 100% 0;
+
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:focus {
+  outline: none;
+}
+
+.bn632-hover.bn26 {
+  background-image: linear-gradient(
+    to right,
+    #25aae1,
+    #4481eb,
+    #04befe,
+    #3f86ed
+  );
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}
+
+.btn > p{
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Titillium Web';
+
+}
+
+.btn > p > a{
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.btn > p > a:hover{
+  text-decoration: underline;
+  color: black;
+  font-weight: 600;
+}
