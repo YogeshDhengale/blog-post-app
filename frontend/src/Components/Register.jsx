@@ -15,7 +15,12 @@ const Register = () => {
                         <div className="input">
                             <input type="email" name="" id="" className='email' placeholder='Users Email' />
                             <input type="password" name="" id="" className="password" placeholder='Password' />
-                            <input type="password" name="" id="" className="password" placeholder='Confirm password' />
+                            <select name="" id="" className='password' placeholder='please select your role'>
+                                <option value="">Please Select Your Role</option>
+                                <option value="">Admin</option>
+                                <option value="">Author</option>
+                                <option value="">Reader</option>
+                            </select>
                         </div>
                         <div className="btn">
                             <button class="bn632-hover bn26">Register</button>

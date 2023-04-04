@@ -18,7 +18,7 @@ const Login = () => {
                         </div>
                         <div className="btn">
                             <button class="bn632-hover bn26">Login</button>
-                            <p >New User pleaase <a href="/" className="signupLink">Register</a> first.</p>
+                            <p >New User pleaase <a href="/signup" className="signupLink">Register</a> first.</p>
                         </div>
                     </div>
                 </div>
