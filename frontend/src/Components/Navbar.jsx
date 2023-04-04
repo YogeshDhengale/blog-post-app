@@ -1,5 +1,4 @@
 import React, { useEffect, useRef,useState } from 'react'
-import {GrAdd} from 'react-icons/gr'
 import { IoMdAdd} from 'react-icons/io'
 import {FaUserAlt} from 'react-icons/fa'
 import {AiFillHome, AiOutlineSearch} from 'react-icons/ai'
@@ -23,6 +22,11 @@ const Navbar = () => {
         window.addEventListener("scroll", handleScroll, {passive: true})
         return window.removeEventListener("scroll",handleScroll)
     },[])
+
+    const userData = JSON.parse(localStorage.getItem('user'));
+    const role=userData.role
+    const user=userData.user.split("@")[0]
+    console.log(user)
   return (
     <>
        <nav className={`${isNavbarVisble? 'visible' :""}`}>
@@ -34,13 +38,13 @@ const Navbar = () => {
                 <RxCrossCircled ></RxCrossCircled>
               </div>
             <a href="/HomePage"><AiFillHome></AiFillHome> Home</a>
-            <a href="/CreatePost"><IoMdAdd></IoMdAdd> Create Post</a>
+            {role !== "Reader" && <a href="/CreatePost"><IoMdAdd></IoMdAdd> Create Post</a> }
         </div>
         <div className="user">
             <FaUserAlt></FaUserAlt>
             <div className='user-details'>
-                <h2 className="username">User</h2>
-                <h6 className='userTitle'>Admin</h6>
+                <h2 className="username">{user}</h2>
+                <h6 className='userTitle'>{role}</h6>
             </div>
         </div>
        </nav>

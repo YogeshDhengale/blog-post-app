@@ -72,8 +72,8 @@ router.get('/authorBlogs', async (req, res) => {
 
         const author = req.headers['author'];
         console.log(author)
-        const totalBlogs = await blogModel.countDocuments({ author: author});
-        const blogs = await blogModel.find({ author: author}).skip(startIndex).limit(limit);
+        const totalBlogs = await blogModel.countDocuments({ author: author });
+        const blogs = await blogModel.find({ author: author }).skip(startIndex).limit(limit);
 
         return res.status(200).json({
             Status: "Blogs are fetch Scuccessfully",
@@ -119,38 +119,42 @@ router.get('/blogs', async (req, res) => {
     }
 });
 
-router.get("/blogs/:id", async (req, res) => {
+router.get('/blogs/:id', async (req, res) => {
     try {
-        const { id } = req.body
-        const blog = await blogModel.findOne(id)
+        const { id } = req.params; // retrieve id from URL parameter
+        const blog = await blogModel.findById(id); // use findById to retrieve the blog with the given id
+        if (!blog) {
+            return res.status(404).json({ message: 'Blog not found' });
+        }
         return res.status(200).json({
-            Status: "Blog is fetched Scuccessfully",
+            Status: 'Blog is fetched successfully',
             blog
         });
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: 'Server error' });
     }
-})
+});
+
 
 router.delete('/blogs/:id', async (req, res) => {
     try {
-      const blogId = req.params.id;
-  
-      const deletedBlog = await blogModel.findByIdAndDelete(blogId);
-  
-      if (!deletedBlog) {
-        return res.status(404).json({ message: 'Blog not found' });
-      }
-  
-      return res.status(200).json({
-        message: `Blog with ID ${blogId} deleted successfully`,
-        deletedBlog
-      });
+        const blogId = req.params.id;
+
+        const deletedBlog = await blogModel.findByIdAndDelete(blogId);
+
+        if (!deletedBlog) {
+            return res.status(404).json({ message: 'Blog not found' });
+        }
+
+        return res.status(200).json({
+            message: `Blog with ID ${blogId} deleted successfully`,
+            deletedBlog
+        });
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ message: 'Server error' });
+        console.error(error);
+        res.status(500).json({ message: 'Server error' });
     }
-  });
+});
 
 module.exports = router
