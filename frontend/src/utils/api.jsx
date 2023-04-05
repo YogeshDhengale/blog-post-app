@@ -1,4 +1,4 @@
-const APIURL = 'http://localhost:5000'
+const APIURL = 'https://blogpost-lgcn.onrender.com'
 
 export async function getLogin(email, password) {
     console.log(email, password)
@@ -104,7 +104,7 @@ export async function getCreateBlog(title, content, author) {
 
 export async function getupdatePost(id, title, content) {
     try {
-      const response = await fetch("http://localhost:5000/editblog", {
+      const response = await fetch(`${APIURL}/editblog`, {
         method: "PUT",
         headers: { 'Content-Type': "application/json" },
         body: JSON.stringify({
