@@ -101,3 +101,27 @@ export async function getCreateBlog(title, content, author) {
         return error
     }
 }
+
+export async function getupdatePost(id, title, content) {
+    try {
+      const response = await fetch("http://localhost:5000/editblog", {
+        method: "PUT",
+        headers: { 'Content-Type': "application/json" },
+        body: JSON.stringify({
+            id: id,
+            title: title,
+            content: content,
+        })
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error);
+      }
+      return data;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  }
+  
+

@@ -28,39 +28,40 @@ router.post('/addblog', async (req, res) => {
 
 
 router.put('/editblog', async (req, res) => {
+    const { id, title, content } = req.body;
     try {
         const { id, title, content } = req.body;
-
-
+    
+        // Check if blog ID is present in the request body
         if (!id) {
-            return res.status(400).json({ message: 'Please provide the id to update the blog' });
+          return res.status(400).json({ message: 'Blog ID is required' });
         }
+    
+        // Find the blog to update
         const blog = await blogModel.findById(id);
-
+    
         if (!blog) {
-            return res.status(404).json({ message: 'Blog not found' });
+          return res.status(404).json({ message: 'Blog not found' });
         }
-
+    
+        // Update the title and content if they are present in the request body
         if (title) {
-            blog.title = title
+          blog.title = title;
         }
-
+    
         if (content) {
-            blog.content = content
+          blog.content = content;
         }
-
-        blog.date_updated = Date.now();
-        const updatedBlog = await blog.save();
-
-        return res.status(200).json({
-            Status: "Blog Updated Successfully",
-            Updated: updatedBlog
-        })
-
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ message: 'Server error' });
-    }
+    
+        // Save the updated blog
+        await blog.save();
+    
+        // Return the updated blog
+        res.status(200).json(blog);
+      } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: 'Server Error' });
+      }
 })
 
 router.get('/authorBlogs', async (req, res) => {

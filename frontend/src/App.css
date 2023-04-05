@@ -579,3 +579,8 @@ nav>h1 {
   border: none;
   outline: none;
 }
+
+.loading{
+  color: white;
+  font-size: 25px;
+}

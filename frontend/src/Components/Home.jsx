@@ -11,6 +11,7 @@ const Home = () => {
         async function fetchBlogs() {
             const response = await getAllPosts(page);
             setData(response);
+            console.log(data)
           }
           fetchBlogs();
     }, [page])
@@ -60,6 +61,7 @@ const Home = () => {
                 <div className="line"></div>
                 <div className="title">
                   <h1>{blog.title}</h1>
+                  <p></p>
                 </div>
               </div>
             ))}
@@ -70,7 +72,7 @@ const Home = () => {
             </div>
           </>
         ) : (
-          <div className="loading-message">Loading...</div>
+          <div className="loading">Loading...</div>
         )}
     </div>
     </>

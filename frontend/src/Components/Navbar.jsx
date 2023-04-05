@@ -1,7 +1,7 @@
 import React, { useEffect, useRef,useState } from 'react'
 import { IoMdAdd} from 'react-icons/io'
 import {FaUserAlt} from 'react-icons/fa'
-import {AiFillHome, AiOutlineSearch} from 'react-icons/ai'
+import {AiFillHome, AiOutlineSearch, AiOutlineLogout} from 'react-icons/ai'
 import {RxCrossCircled} from 'react-icons/rx'
  
 const Navbar = () => {
@@ -27,6 +27,12 @@ const Navbar = () => {
     const role=userData.role
     const user=userData.user.split("@")[0]
     console.log(user)
+
+    const handelLogout=()=>{
+        localStorage.removeItem('user');
+    }
+
+
   return (
     <>
        <nav className={`${isNavbarVisble? 'visible' :""}`}>
@@ -37,8 +43,9 @@ const Navbar = () => {
                 <input type={"text"} className='input-area' placeholder='Search a blog' ></input>
                 <RxCrossCircled ></RxCrossCircled>
               </div>
-            <a href="/HomePage"><AiFillHome></AiFillHome> Home</a>
-            {role !== "Reader" && <a href="/CreatePost"><IoMdAdd></IoMdAdd> Create Post</a> }
+            <a href="/HomePage"><AiFillHome></AiFillHome> HOME</a>
+            {role !== "Reader"&& role !== "Admin" && <a href="/CreatePost"><IoMdAdd></IoMdAdd> Create Post</a> }
+            <a href="/" onClick={handelLogout}><AiOutlineLogout></AiOutlineLogout> LOGOUT</a>
         </div>
         <div className="user">
             <FaUserAlt></FaUserAlt>

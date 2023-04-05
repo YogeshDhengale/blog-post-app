@@ -29,7 +29,7 @@ const CreateBlog = () => {
                     <input type="text" className="input-title" id='title'   onChange={(e)=>{setTitle(e.target.value)}} />
                 </div>
                 <div className="titlecard">
-                    <label htmlFor="title">Please Enter Your Content below: </label>
+                    <label htmlFor="content">Please Enter Your Content below: </label>
                     <textarea name="content" className='input-content' id="" cols="30" rows="10" onChange={(e)=>{setContent(e.target.value)}}></textarea>
                 </div>
 
