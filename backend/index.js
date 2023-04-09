@@ -18,6 +18,7 @@ app.use(function(req, res, next) {
   next();
 });
 
+
 app.use(registerAndLogin)
 app.use(addblog)
 
