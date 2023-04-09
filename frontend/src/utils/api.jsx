@@ -45,7 +45,6 @@ export async function getAllPosts(page) {
     try {
         const response = await fetch(`${APIURL}/blogs?page=${page}&limit=4`);
         const data = await response.json();
-        console.log(data);
         return data;
     } catch (error) {
         console.error(error);
@@ -134,7 +133,7 @@ export async function getAuthorData (page, author){
             }
         );
         const data = await response.json();
-        console.log(data);
+
         return data;
     } catch (error) {
         console.error(error);

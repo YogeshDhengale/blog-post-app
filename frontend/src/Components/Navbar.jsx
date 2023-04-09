@@ -30,9 +30,7 @@ const Navbar = (props) => {
     const role = userData.role
     const user = userData.user.split("@")[0]
 
-    if(!role || !user){
-        return <div>Login please</div>
-    }
+    
     const handelLogout = () => {
         localStorage.removeItem('user');
     }
@@ -54,6 +52,7 @@ const Navbar = (props) => {
                 <div className="user">
                     <FaUserAlt></FaUserAlt>
                     <div className='user-details' onClick={()=>{if(role === 'Author'){navigate('/authorsBlog')}}}>
+                        
                         <h2 className="username">{user}</h2>
                         <h6 className='userTitle'>{role}</h6>
                     </div>

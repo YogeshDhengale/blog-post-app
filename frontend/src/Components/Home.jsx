@@ -11,7 +11,7 @@ const Home = () => {
         async function fetchBlogs() {
             const response = await getAllPosts(page);
             setData(response);
-            console.log(data)
+
           }
           fetchBlogs();
     }, [page])
@@ -61,14 +61,14 @@ const Home = () => {
                 <div className="line"></div>
                 <div className="title">
                   <h1>{blog.title}</h1>
-                  <p></p>
+
                 </div>
               </div>
             ))}
             <div className="pagination">
-              <a onClick={handleDecrement}>{'<'}</a>
-              <a onChange={handlePageChange}>{page}</a>
-              <a onClick={handleIncrement}>{'>'}</a>
+              <a href="#" onClick={handleDecrement}>{'<'}</a>
+              <a href="#" onChange={handlePageChange}>{page}</a>
+              <a href="#" onClick={handleIncrement}>{'>'}</a>
             </div>
           </>
         ) : (
