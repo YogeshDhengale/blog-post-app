@@ -15,7 +15,7 @@ const Author = () => {
             setData(response);
         }
         fetchBlogs();
-    }, [page])
+    }, [page, author])
 
     const handleDecrement = () => {
         if (page > 1) {
@@ -68,9 +68,9 @@ const Author = () => {
                             </div>
                         ))}
                         <div className="pagination">
-                            <a href="#" onClick={handleDecrement}>{'<'}</a>
-                            <a href="#" onChange={handlePageChange}>{page}</a>
-                            <a href="#" onClick={handleIncrement}>{'>'}</a>
+                            <button onClick={handleDecrement}>{'<'}</button>
+                            <p href="#" onChange={handlePageChange}>{page}</p>
+                            <button href="#" onClick={handleIncrement}>{'>'}</button>
                         </div>
                     </>
                 ) : (

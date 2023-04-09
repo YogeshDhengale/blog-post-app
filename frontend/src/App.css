@@ -546,7 +546,7 @@ nav>h1 {
   border: 1px solid #1b2028;
 }
 
-.pagination > button, p{
+.pagination > button{
   cursor: pointer;
   color: black;
   float: left;
