@@ -1,4 +1,5 @@
 import './App.css';
+import Author from './Components/Author';
 import CreateBlog from './Components/CreateBlog';
 import Home from './Components/Home';
 import Login from './Components/Login';
@@ -15,6 +16,7 @@ function App() {
         <Route path='/signup' element={<Register></Register>}/>
         <Route path='/HomePage' element={<Home></Home>}/>
         <Route path='/PostPage/:id' element={<Single></Single>} />
+        <Route path='/authorsBlog' element={<Author></Author>}/>
         <Route path='/CreatePost' element={<CreateBlog></CreateBlog>} />
       </Routes>
     </BrowserRouter>

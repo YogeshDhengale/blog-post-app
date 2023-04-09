@@ -23,10 +23,6 @@ const Single = () => {
 
     }, [id]);
 
-    if (!post) {
-        return <div>Loading...</div>;
-    }
-
     const userData = JSON.parse(localStorage.getItem('user'));
     const author = userData.author;
     const role = userData.role;
@@ -63,7 +59,9 @@ const Single = () => {
         <>
             <Navbar />
             <div className="homepage">
-                <div className="single-card">
+                {post ? (
+                    <>
+                    <div className="single-card">
                     <div className="line"></div>
                     {editing ? (
                         <>
@@ -115,6 +113,9 @@ const Single = () => {
                         </>
                     )}
                 </div>
+                </>
+                ): (<div className="loading">Loading...</div>)}
+                
             </div>
         </>
     );

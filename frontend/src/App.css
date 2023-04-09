@@ -346,10 +346,15 @@ nav>h1 {
   color: #32e6e2;
 }
 
+.user-details{
+  cursor: pointer;
+}
+
 .username {
   font-family: 'Titillium Web';
   font-size: 20px;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .userTitle {
@@ -358,6 +363,7 @@ nav>h1 {
   letter-spacing: 0.5px;
   font-weight: 200;
   opacity: 0.6;
+  cursor: pointer;
 }
 
 

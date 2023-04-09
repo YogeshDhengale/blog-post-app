@@ -124,4 +124,20 @@ export async function getupdatePost(id, title, content) {
     }
   }
   
+export async function getAuthorData (page, author){
 
+    try {
+        const response = await fetch(`${APIURL}/authorBlogs?page=${page}&limit=4`,
+            {
+                method: 'GET',
+                headers: {"author": `${author}`}
+            }
+        );
+        const data = await response.json();
+        console.log(data);
+        return data;
+    } catch (error) {
+        console.error(error);
+        return error
+    }
+}
