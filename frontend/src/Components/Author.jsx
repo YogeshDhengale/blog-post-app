@@ -57,7 +57,7 @@ const Author = () => {
         <>
             <Navbar></Navbar>
             <div className='homepage' >
-                {data ? (
+                {data && data.blogs ? (
                     <>
                         {data.blogs.map((blog) => (
                             <div key={blog._id} className="blog" onClick={() => { handleSingleBlog(blog._id) }}>
