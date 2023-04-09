@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { getRegister } from '../utils/api'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 const Register = () => {
     const navigate = useNavigate()
@@ -57,7 +57,7 @@ const Register = () => {
                         </div>
                         <div className="btn">
                             <button class="bn632-hover bn26"  onClick={handleRegister}>Register</button>
-                            <p >Exicting users <a href="/" className="signupLink">Login</a> please.</p>
+                            <p >Exicting users <Link to="/" className="signupLink">Login</Link> please.</p>
                         </div>
                     </div>
                 </div>

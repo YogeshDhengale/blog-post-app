@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { getLogin } from '../utils/api'
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 
 const Login = () => {
     const [email, setEmail]=useState()
@@ -44,7 +44,7 @@ const Login = () => {
                         </div>
                         <div className="btn">
                             <button class="bn632-hover bn26" onClick={handleLogin}>Login</button>
-                            <p >New User pleaase <a href="/signup" className="signupLink">Register</a> first.</p>
+                            <p >New User pleaase <Link to="/signup" className="signupLink">Register</Link> first.</p>
                         </div>
                     </div>
                 </div>

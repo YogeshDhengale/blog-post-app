@@ -69,8 +69,8 @@ const Author = () => {
                         ))}
                         <div className="pagination">
                             <button onClick={handleDecrement}>{'<'}</button>
-                            <p href="#" onChange={handlePageChange}>{page}</p>
-                            <button href="#" onClick={handleIncrement}>{'>'}</button>
+                            <p onChange={handlePageChange}>{page}</p>
+                            <button onClick={handleIncrement}>{'>'}</button>
                         </div>
                     </>
                 ) : (

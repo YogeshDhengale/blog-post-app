@@ -532,12 +532,14 @@ nav>h1 {
 
 .pagination{
   width: 200px;
-  height: 50px;
-  display: inline-block;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
 }
 
 .pagination> a{
   cursor: pointer;
+  width: 200px;
   color: black;
   float: left;
   padding: 8px 16px;
@@ -549,23 +551,20 @@ nav>h1 {
 .pagination > button{
   cursor: pointer;
   color: black;
-  float: left;
-  padding: 8px 16px;
+  height: 100%;
+  padding: 10px;
   text-decoration: none;
   color: white;
   border: 1px solid #1b2028;
 }
 
 .pagination > p{
+  width: 10px;
+  height: 24px;
+  padding: 8px 16px;
   background-color: #00ffd5;
   color: black;
 }
-
-.pagination> a:nth-child(2){
-  background-color: #00ffd5;
-  color: black;
-}
-
 
 .searchDrop{
   background: #12181f;
