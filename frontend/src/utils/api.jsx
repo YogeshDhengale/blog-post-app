@@ -21,7 +21,7 @@ export async function getLogin(email, password) {
 
 export async function getRegister(email, password, role) {
     try {
-        const response = await fetch( `${APIURL}/register`, {
+        const response = await fetch(`${APIURL}/register`, {
             method: "POST",
             headers: { 'Content-Type': "application/json" },
             body: JSON.stringify({
@@ -103,40 +103,37 @@ export async function getCreateBlog(title, content, author) {
 
 export async function getupdatePost(id, title, content) {
     try {
-      const response = await fetch(`${APIURL}/editblog`, {
-        method: "PUT",
-        headers: { 'Content-Type': "application/json" },
-        body: JSON.stringify({
-            id: id,
-            title: title,
-            content: content,
-        })
-      });
-      const data = await response.json();
-      if (!response.ok) {
-        throw new Error(data.error);
-      }
-      return data;
-    } catch (error) {
-      console.log(error);
-      return error;
-    }
-  }
-  
-export async function getAuthorData (page, author){
-
-    try {
-        const response = await fetch(`${APIURL}/authorBlogs?page=${page}&limit=4`,
-            {
-                method: 'GET',
-                headers: {"author": `${author}`}
-            }
-        );
+        const response = await fetch(`${APIURL}/editblog`, {
+            method: "PUT",
+            headers: { 'Content-Type': "application/json" },
+            body: JSON.stringify({
+                id: id,
+                title: title,
+                content: content,
+            })
+        });
         const data = await response.json();
-        console.log(data)
+        if (!response.ok) {
+            throw new Error(data.error);
+        }
+        return data;
+    } catch (error) {
+        console.log(error);
+        return error;
+    }
+}
+
+export async function getAuthorData(page, author) {
+    try {
+        const response = await fetch(`${APIURL}/authorBlogs?page=${page}&limit=4`, {
+            method: 'GET',
+            headers: { author: author },
+        });
+        const data = await response.json();
+        console.log(data);
         return data;
     } catch (error) {
         console.error(error);
-        return error
+        return error;
     }
 }
