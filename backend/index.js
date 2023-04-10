@@ -7,7 +7,9 @@ const dbconnect=require('./connection/connection')
 const app=express()
 app.use(cors());
 
-
+app.use(cors({
+  origin: 'https://bejewelled-kleicha-2c4935.netlify.app'
+}));
 
 
 dbconnect()
