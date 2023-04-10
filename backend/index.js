@@ -7,7 +7,7 @@ const dbconnect=require('./connection/connection')
 const app=express()
 app.use(cors());
 
-app.options('*', cors());
+
 
 
 dbconnect()
