@@ -3,7 +3,7 @@ const APIURL = 'https://blogpost-lgcn.onrender.com'
 export async function getLogin(email, password) {
     console.log(email, password)
     try {
-        const response = await fetch(APIURL, {
+        const response = await fetch(`${APIURL}`, {
             method: "POST",
             headers: { 'Content-Type': "application/json" },
             body: JSON.stringify({
