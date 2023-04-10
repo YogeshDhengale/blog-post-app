@@ -7,9 +7,11 @@ const dbconnect=require('./connection/connection')
 const app=express()
 app.use(cors());
 
-app.use(cors({
-  origin: 'https://bejewelled-kleicha-2c4935.netlify.app'
-}));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, author");
+  next();
+});
 
 
 dbconnect()
